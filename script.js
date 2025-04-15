@@ -23,12 +23,27 @@ console.log("togglePw:", togglePw);
 
 //loginForm submit event
 const loginForm = document.getElementById("loginForm");
+const rememberCheckbox = document.getElementById("rememberID");
+
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault(); //prevent default
 
   if (useridInput.value === "" || pwInput.value === "") {
     alert("Please enter your id and password");
-  } else {
-    alert("Login success");
+    return;
   }
+
+  if (rememberCheckbox.checked) {
+    localStorage.setItem("savedUserID", useridInput.value);
+  } else {
+    localStorage.removeItem("savedUserID");
+  }
+  alert("Login success");
 });
+
+//page open
+const savedID = localStorage.getItem("savedUserID");
+if (savedID) {
+  useridInput.value = savedID;
+  rememberCheckbox.checked = true;
+}

@@ -71,3 +71,16 @@ body {
   /* cannot drag */
   user-select: none;
 }
+
+.remember-wrap {
+  display: flex;
+  /* align-items: center; */
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.6rem;
+}
+
+.remember-wrap input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
