@@ -61,3 +61,28 @@ showLogin.addEventListener("click", () => {
   registerForm.style.display = "none"; //hide
   loginForm.style.display = "block"; //show
 });
+
+//Valid
+registerForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const id = document.getElementById("registerID").value.trim();
+  const pw = document.getElementById("registerPW").value.trim();
+  const pwConfirm = document.getElementById("registerPWConfirm").value.trim();
+  const phone = document.getElementById("phoneNumber").value.trim();
+
+  //confirm all elements
+  if (!id || !pw || !pwConfirm || !phone) {
+    alert("please enter all elements");
+    return;
+  }
+
+  //pwConfirm
+  if (pw !== pwConfirm) {
+    alert("password do not match");
+    return;
+  }
+
+  //all complete
+  alert("Signup complete!");
+});
