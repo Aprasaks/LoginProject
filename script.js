@@ -79,10 +79,36 @@ registerForm.addEventListener("submit", (e) => {
 
   //pwConfirm
   if (pw !== pwConfirm) {
+    //!== value and type(all)
     alert("password do not match");
     return;
   }
+  //signup and localstorage saved
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  //new sign up
+  const newUser = {
+    id: id,
+    pw: pw,
+    phone: phone,
+  };
+
+  //userid duplicate
+  const isDuplicate = users.some((user) => user.id === id);
+  if (isDuplicate) {
+    alert("userid is not valid");
+    return;
+  }
+
+  //plus Array and save
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
 
   //all complete
   alert("Signup complete!");
+
+  //form default and transform
+  registerForm.reset();
+  registerForm.style.display = "none";
+  loginForm.style.display = "block";
 });
