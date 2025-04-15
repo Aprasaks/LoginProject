@@ -20,3 +20,15 @@ togglePw.addEventListener("click", () => {
 
 console.log("pwInput:", pwInput); // null이면 못 찾은 거!
 console.log("togglePw:", togglePw);
+
+//loginForm submit event
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault(); //prevent default
+
+  if (useridInput.value === "" || pwInput.value === "") {
+    alert("Please enter your id and password");
+  } else {
+    alert("Login success");
+  }
+});
