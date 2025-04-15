@@ -11,10 +11,14 @@
       <h2>login</h2>
       <form>
         <input type="text" id="userid" placeholder="UserID" />
-        <input type="password" placeholder="UserPW" />
+        <div class="password-wrapper">
+          <input type="password" id="userpw" placeholder="UserPW" />
+          <!-- span = can click eye -->
+          <span id="togglePassword" class="toggle-icon">👁️</span>
+        </div>
         <button type="submit">Login</button>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
