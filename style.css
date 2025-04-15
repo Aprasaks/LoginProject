@@ -76,11 +76,23 @@ body {
   display: flex;
   /* align-items: center; */
   gap: 0.4rem;
-  margin-top: 1rem;
+  margin-top: 0.4rem;
   font-size: 0.6rem;
+  height: 10px;
 }
 
 .remember-wrap input[type="checkbox"] {
   width: 16px;
-  height: 16px;
+  height: 13px;
+}
+
+.toggle-form {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.toggle-form span {
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: bold;
 }

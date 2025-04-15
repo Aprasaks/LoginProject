@@ -41,9 +41,23 @@ loginForm.addEventListener("submit", (e) => {
   alert("Login success");
 });
 
-//page open
+//page open and checkbox true
 const savedID = localStorage.getItem("savedUserID");
 if (savedID) {
   useridInput.value = savedID;
   rememberCheckbox.checked = true;
 }
+
+const registerForm = document.getElementById("registerForm");
+const showRegister = document.getElementById("showRegister");
+const showLogin = document.getElementById("showLogin");
+
+showRegister.addEventListener("click", () => {
+  loginForm.style.display = "none"; //registerForm.style.display ="none" -> <form id="registerForm" style="display: none;">
+  registerForm.style.display = "block";
+});
+
+showLogin.addEventListener("click", () => {
+  registerForm.style.display = "none"; //hide
+  loginForm.style.display = "block"; //show
+});

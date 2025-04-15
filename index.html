@@ -16,13 +16,22 @@
           <!-- span = can click eye -->
           <span id="togglePassword" class="toggle-icon">👁️</span>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Sign in</button>
+        <p class="toggle-form">Not a member yet? <span id="showRegister">Sign up</span></p>
+        <div class="remember-wrap">
+          <input type="checkbox" id="rememberID" />
+          <!-- if i click this word, work same -->
+          <label for="rememberID">Remember ID</label>
+        </div>
       </form>
-      <div class="remember-wrap">
-        <input type="checkbox" id="rememberID" />
-        <!-- if i click this word, work same -->
-        <label for="rememberID">Remember ID</label>
-      </div>
+      <form id="registerForm" style="display: none">
+        <input type="text" id="registerID" placeholder="ID" />
+        <input type="password" id="registerPW" placeholder="Password" />
+        <input type="password" id="registerPWConfirm" placeholder="Password Confirm" />
+        <input type="number" id="phoneNumber" placeholder="Phone number" />
+        <button type="submit">Sign up</button>
+        <p class="toggle-form">Already have an accout? <span id="showLogin">Sign in</span></p>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>
