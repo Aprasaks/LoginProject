@@ -28,17 +28,33 @@ const rememberCheckbox = document.getElementById("rememberID");
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault(); //prevent default
 
-  if (useridInput.value === "" || pwInput.value === "") {
-    alert("Please enter your id and password");
-    return;
+  const enteredID = useridInput.value.trim();
+  const enteredPW = pwInput.value.trim();
+
+  //must JSON exist up and down on sign in and out
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  //loading saved users match
+  const matchedUser = users.find((user) => user.id === enteredID && user.pw === enteredPW);
+
+  //login result
+  if (matchedUser) {
+    alert(`Hello, ${matchedUser.id}`);
+  } else {
+    alert("userid and password is not valid");
   }
 
-  if (rememberCheckbox.checked) {
-    localStorage.setItem("savedUserID", useridInput.value);
-  } else {
-    localStorage.removeItem("savedUserID");
-  }
-  alert("Login success");
+  //   if (useridInput.value === "" || pwInput.value === "") {
+  //     alert("Please enter your id and password");
+  //     return;
+  //   }
+
+  //   if (rememberCheckbox.checked) {
+  //     localStorage.setItem("savedUserID", useridInput.value);
+  //   } else {
+  //     localStorage.removeItem("savedUserID");
+  //   }
+  //   alert("Login success");
 });
 
 //page open and checkbox true
